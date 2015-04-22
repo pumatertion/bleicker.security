@@ -1,0 +1,19 @@
+{
+	"name": "bleicker/security",
+	"require": {
+	},
+	"require-dev": {
+		"phpunit/phpunit": "*"
+	},
+	"authors": [
+		{
+			"name": "Carsten Bleicker",
+			"email": "carsten@bleicker.de"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Bleicker\\Security\\": "src"
+		}
+	}
+}
