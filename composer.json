@@ -15,5 +15,10 @@
 		"psr-4": {
 			"Bleicker\\Security\\": "src"
 		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Tests\\Bleicker\\Security\\": "tests"
+		}
 	}
 }
