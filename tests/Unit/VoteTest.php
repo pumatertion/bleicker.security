@@ -4,7 +4,6 @@ namespace Tests\Bleicker\Security\Unit;
 
 use Bleicker\Security\Vote;
 use Bleicker\Security\Exception\AccessDeniedException;
-use Bleicker\Security\Exception\AccessGrantedException;
 use Tests\Bleicker\Security\UnitTestCase;
 
 /**
@@ -26,17 +25,6 @@ class VoteTest extends UnitTestCase {
 
 	/**
 	 * @test
-	 * @expectedException \Bleicker\Security\Exception\AccessGrantedException
-	 */
-	public function grantedTest() {
-		$voter = new Vote(function () {
-			throw new AccessGrantedException();
-		});
-		$voter->vote();
-	}
-
-	/**
-	 * @test
 	 * @expectedException \Bleicker\Security\Exception\AccessDeniedException
 	 */
 	public function deniedTest() {
@@ -53,16 +41,6 @@ class VoteTest extends UnitTestCase {
 	public function unknowExceptionTest() {
 		$voter = new Vote(function () {
 			throw new \Exception();
-		});
-		$voter->vote();
-	}
-
-	/**
-	 * @test
-	 * @expectedException \Bleicker\Security\Exception\MissingVoterExceptionException
-	 */
-	public function noExceptionTest() {
-		$voter = new Vote(function () {
 		});
 		$voter->vote();
 	}
