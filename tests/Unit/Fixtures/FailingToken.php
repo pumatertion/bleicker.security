@@ -2,14 +2,14 @@
 
 namespace Tests\Bleicker\Security\Unit\Fixtures;
 
-use Bleicker\Token\AbstractToken;
+use Bleicker\Token\AbstractPrototypeToken;
 
 /**
  * Class FailingToken
  *
  * @package Tests\Bleicker\Security\Unit\Fixtures
  */
-class FailingToken extends AbstractToken {
+class FailingToken extends AbstractPrototypeToken {
 
 	/**
 	 * @return $this

@@ -134,11 +134,11 @@
         },
         {
             "name": "bleicker/token",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:cbleicker/bleicker-token.git",
-                "reference": "4e99f02bfaadcbab3aa56a15c78fc2d6a121721d"
+                "reference": "ac37114eaedd409eed283e657d465270026798a3"
             },
             "require": {
                 "bleicker/objectmanager": "~1.0",
@@ -164,7 +164,7 @@
                     "email": "carsten@bleicker.de"
                 }
             ],
-            "time": "2015-04-25 14:50:43"
+            "time": "2015-04-25 17:54:26"
         },
         {
             "name": "symfony/http-foundation",
