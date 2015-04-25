@@ -21,27 +21,5 @@
 		"psr-4": {
 			"Tests\\Bleicker\\Security\\": "tests"
 		}
-	},
-	"repositories": [
-		{
-			"type": "git",
-			"url": "git@bitbucket.org:cbleicker/bleicker-authentication.git"
-		},
-		{
-			"type": "git",
-			"url": "git@bitbucket.org:cbleicker/bleicker-objectmanager.git"
-		},
-		{
-			"type": "git",
-			"url": "git@bitbucket.org:cbleicker/bleicker-exception.git"
-		},
-		{
-			"type": "git",
-			"url": "git@bitbucket.org:cbleicker/bleicker-session.git"
-		},
-		{
-			"type": "git",
-			"url": "git@bitbucket.org:cbleicker/bleicker-token.git"
-		}
-	]
+	}
 }
