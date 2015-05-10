@@ -12,6 +12,11 @@ use Bleicker\Container\AbstractContainer;
 class Votes extends AbstractContainer implements VotesInterface {
 
 	/**
+	 * @var array
+	 */
+	public static $storage = [];
+
+	/**
 	 * @param string $alias
 	 * @return VoteInterface
 	 */

@@ -2,8 +2,6 @@
 
 namespace Bleicker\Security;
 
-use Bleicker\Security\Exception\AbstractVoterException;
-use Bleicker\Security\Exception\InvalidVoterExceptionException;
 use Closure;
 
 /**
@@ -16,11 +14,9 @@ interface VoteInterface {
 	const DEFAULT_PATTERN = '.*', DEFAULT_MODIFIER = '';
 
 	/**
-	 * @throws AbstractVoterException
-	 * @throws InvalidVoterExceptionException
 	 * @return void
 	 */
-	public function vote();
+	public function run();
 
 	/**
 	 * @return string

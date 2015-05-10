@@ -10,5 +10,3 @@ namespace Bleicker\Security;
 class Vote extends AbstractVote {
 
 }
-
-

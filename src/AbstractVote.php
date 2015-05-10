@@ -3,10 +3,7 @@
 namespace Bleicker\Security;
 
 use Bleicker\ObjectManager\ObjectManager;
-use Bleicker\Security\Exception\AbstractVoterException;
-use Bleicker\Security\Exception\InvalidVoterExceptionException;
 use Closure;
-use Exception;
 use ReflectionClass;
 
 /**
@@ -36,25 +33,17 @@ abstract class AbstractVote implements VoteInterface {
 	 * @param string $pattern
 	 * @param string $modifier
 	 */
-	public final function __construct(Closure $vote, $pattern, $modifier) {
+	public final function __construct(Closure $vote, $pattern = VoteInterface::DEFAULT_PATTERN, $modifier = VoteInterface::DEFAULT_MODIFIER) {
 		$this->vote = $vote;
 		$this->pattern = $pattern;
 		$this->modifier = $modifier;
 	}
 
 	/**
-	 * @throws AbstractVoterException
-	 * @throws InvalidVoterExceptionException
 	 * @return void
 	 */
-	public final function vote() {
-		try {
-			call_user_func($this->vote);
-		} catch (AbstractVoterException $exception) {
-			throw $exception;
-		} catch (Exception $invalidException) {
-			throw new InvalidVoterExceptionException('Closure must throw an in instance of "' . AbstractVoterException::class . '"', 1431266583);
-		}
+	public final function run() {
+		call_user_func($this->vote);
 	}
 
 	/**
@@ -80,8 +69,9 @@ abstract class AbstractVote implements VoteInterface {
 	 */
 	public static final function register($alias, Closure $closure, $pattern = VoteInterface::DEFAULT_PATTERN, $modifier = VoteInterface::DEFAULT_MODIFIER) {
 		$reflection = new ReflectionClass(static::class);
+		$constructorArguments = array_values(array_slice(func_get_args(), 1));
 		/** @var static $instance */
-		$instance = $reflection->newInstanceArgs(array_slice(func_get_args(), 1));
+		$instance = $reflection->newInstanceArgs($constructorArguments);
 		/** @var VotesInterface $votes */
 		$votes = ObjectManager::get(VotesInterface::class, function () {
 			$votes = new Votes();
