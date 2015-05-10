@@ -5,10 +5,10 @@ namespace Bleicker\Security\Exception;
 use Exception;
 
 /**
- * Class AbstractVoterException
+ * Class InvalidVoteExceptionException
  *
  * @package Bleicker\Security\Exception
  */
-abstract class AbstractVoterException extends Exception {
+class InvalidVoteExceptionException extends Exception {
 
 }
