@@ -1,5 +1,6 @@
 {
 	"name": "bleicker/security",
+	"type": "library",
 	"require": {
 		"bleicker/authentication": "~1.0"
 	},
