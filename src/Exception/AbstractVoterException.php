@@ -2,7 +2,7 @@
 
 namespace Bleicker\Security\Exception;
 
-use Exception;
+use Bleicker\Exception\ThrowableException as Exception;
 
 /**
  * Class AbstractVoterException
