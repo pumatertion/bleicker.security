@@ -2,10 +2,14 @@
 	"name": "bleicker/security",
 	"type": "library",
 	"require": {
-		"bleicker/authentication": "~1.0"
+		"bleicker/exception": "1.0.*",
+		"bleicker/objectmanager": "1.1.*",
+		"bleicker/container": "1.0.*",
+		"doctrine/collections": "~1.2"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "*"
+		"phpunit/phpunit": "*",
+		"bleicker/authentication": "2.0.*"
 	},
 	"authors": [
 		{
