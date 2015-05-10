@@ -33,7 +33,7 @@ abstract class AbstractVote implements VoteInterface {
 	 * @param string $pattern
 	 * @param string $modifier
 	 */
-	public final function __construct(Closure $vote, $pattern = VoteInterface::DEFAULT_PATTERN, $modifier = VoteInterface::DEFAULT_MODIFIER) {
+	public function __construct(Closure $vote, $pattern = VoteInterface::DEFAULT_PATTERN, $modifier = VoteInterface::DEFAULT_MODIFIER) {
 		$this->vote = $vote;
 		$this->pattern = $pattern;
 		$this->modifier = $modifier;
@@ -42,21 +42,21 @@ abstract class AbstractVote implements VoteInterface {
 	/**
 	 * @return void
 	 */
-	public final function run() {
+	public function run() {
 		call_user_func($this->vote);
 	}
 
 	/**
 	 * @return string
 	 */
-	public final function getPattern() {
+	public function getPattern() {
 		return $this->pattern;
 	}
 
 	/**
 	 * @return string
 	 */
-	public final function getModifier() {
+	public function getModifier() {
 		return $this->modifier;
 	}
 
@@ -67,7 +67,7 @@ abstract class AbstractVote implements VoteInterface {
 	 * @param Closure $closure
 	 * @return static
 	 */
-	public static final function register($alias, Closure $closure, $pattern = VoteInterface::DEFAULT_PATTERN, $modifier = VoteInterface::DEFAULT_MODIFIER) {
+	public static function register($alias, Closure $closure, $pattern = VoteInterface::DEFAULT_PATTERN, $modifier = VoteInterface::DEFAULT_MODIFIER) {
 		$reflection = new ReflectionClass(static::class);
 		$constructorArguments = array_values(array_slice(func_get_args(), 1));
 		/** @var static $instance */
