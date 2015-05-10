@@ -35,6 +35,7 @@ class SecurityManager implements SecurityManagerInterface {
 
 	/**
 	 * @param string $subject
+	 * @return $this
 	 */
 	public function vote($subject) {
 		$this->results->clear();
@@ -48,6 +49,7 @@ class SecurityManager implements SecurityManagerInterface {
 			}
 			$matchingVotes->next();
 		}
+		return $this;
 	}
 
 	/**

@@ -12,6 +12,7 @@ interface SecurityManagerInterface {
 
 	/**
 	 * @param string $subject
+	 * @return $this
 	 */
 	public function vote($subject);
 
