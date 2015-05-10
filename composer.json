@@ -2,7 +2,8 @@
 	"name": "bleicker/security",
 	"type": "library",
 	"require": {
-		"bleicker/exception": "1.0.*"
+		"bleicker/exception": "1.0.*",
+		"bleicker/objectmanager": "1.1.*",
 	},
 	"require-dev": {
 		"phpunit/phpunit": "*"
